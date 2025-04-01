@@ -26,4 +26,10 @@ public class User {
     @OneToMany(mappedBy = "assignee" , cascade = CascadeType.ALL)
     private List<Issue> assignIssue = new ArrayList<>();
 
+    @OneToMany
+    private Project project;
+
+
+
+
 }
