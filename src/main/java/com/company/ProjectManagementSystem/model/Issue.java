@@ -2,14 +2,18 @@ package com.company.ProjectManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 @Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Issue {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

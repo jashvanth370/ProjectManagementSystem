@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +25,11 @@ public class User {
     @OneToMany(mappedBy = "assignee" , cascade = CascadeType.ALL)
     private List<Issue> assignIssue = new ArrayList<>();
 
-    @OneToMany
-    private Project project;
+    @ManyToMany
+    private List<Project> project = new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Message> messages = new ArrayList<>();
 
 
 }
